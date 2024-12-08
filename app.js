@@ -19,7 +19,6 @@ require('dotenv').config()
 //     logger.error('Error connecting to MongoDB:', error.message)
 //   })
 
-
 app.use(cors({
   origin: '*'
 }))
