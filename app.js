@@ -9,15 +9,15 @@ const logger = require('./utils/logger')
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-mongoose.set('strictQuery', false)
+// mongoose.set('strictQuery', false)
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => {
-    logger.info('Connected to MongoDB')
-  })
-  .catch((error) => {
-    logger.error('Error connecting to MongoDB:', error.message)
-  })
+// mongoose.connect(process.env.MONGODB_URI)
+//   .then(() => {
+//     logger.info('Connected to MongoDB')
+//   })
+//   .catch((error) => {
+//     logger.error('Error connecting to MongoDB:', error.message)
+//   })
 
 
 app.use(cors({
@@ -28,8 +28,8 @@ app.use(express.static('dist'))
 app.use(express.json())
 app.use(middleware.requestLogger)
 
-app.use('/api/websites', websiteRouter)
-app.use('/api/votes', voteRouter)
+// app.use('/api/websites', websiteRouter)
+// app.use('/api/votes', voteRouter)
 app.use(`/api/departures`, departuresRouter)
 
 app.use(middleware.unknownEndpoint)
